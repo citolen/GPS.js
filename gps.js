@@ -240,10 +240,11 @@
         return 'manual input';
       case 'S':
         return 'simulated';
-      case 'N':
-        return 'not valid';
       case 'P':
         return 'precise';
+      default:
+      case 'N':
+        return 'not valid';
     }
     throw new Error('INVALID FAA MODE: ' + faa);
   }
@@ -521,7 +522,7 @@
     // Geographic Position - Latitude/Longitude
     'GLL': function(str, gll) {
 
-      if (gll.length !== 9) {
+      if (gll.length !== 8) {
         throw new Error('Invalid GLL length: ' + str);
       }
 
